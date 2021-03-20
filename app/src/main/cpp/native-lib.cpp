@@ -123,3 +123,12 @@ Java_com_leyline_opencv_MainActivity_myColorMap(JNIEnv *env, jobject, jobject bi
     myGrayScale(gray);
     matToBitMap(env, gray, bitmapOut, false);
 }
+
+extern "C" JNIEXPORT void JNICALL
+Java_com_leyline_opencv_MainActivity_superGray(JNIEnv *env, jobject, jobject bitmapIn,
+                                                jobject bitmapOut) {
+    Mat gray;
+    bitMapToMat(env, bitmapIn, gray, false);
+    myGrayScale(gray);
+    matToBitMap(env, gray, bitmapOut, false);
+}
