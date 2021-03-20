@@ -8,7 +8,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.leyline.opencv"
+        applicationId "com.michaeljahns.opencv"
         minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
