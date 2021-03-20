@@ -4,5 +4,6 @@
     <string name="flip"> FLIP </string>
     <string name="grayscale"> GRAYSCALE </string>
     <string name="autumn"> AUTUMN </string>
+    <string name="deconstruct"> DECONSTRUCT </string>
     <string name="mutableImageDescription"> This Images src will remain a constant, but its display will vary depending on the c++ transforms </string>
 </resources>
