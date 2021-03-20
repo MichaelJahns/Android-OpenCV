@@ -6,59 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <Button
-        android:id="@+id/btnFlip3"
+        android:id="@+id/btnFlipHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginEnd="25dp"
         android:onClick="btnFlipClick"
-        android:text="flip"
+        android:text="@string/flip"
         app:layout_constraintBottom_toTopOf="@+id/sldSigma"
-        app:layout_constraintEnd_toStartOf="@+id/btnColorMap1"
+        app:layout_constraintEnd_toStartOf="@+id/btnGrayscale"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mutableImage" />
 
     <Button
-        android:id="@+id/btnColorMap2"
+        android:id="@+id/btnAutumn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="38dp"
         android:layout_marginEnd="36dp"
         android:onClick="btnColorMap"
-        android:text="Autumn"
+        android:text="@string/autumn"
         app:layout_constraintBottom_toTopOf="@+id/sldSigma"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnColorMap1"
+        app:layout_constraintStart_toEndOf="@+id/btnGrayscale"
         app:layout_constraintTop_toBottomOf="@+id/mutableImage"
         app:layout_constraintVertical_bias="0.502" />
+
+    <Button
+        android:id="@+id/btnGrayscale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btnGrayscale"
+        android:text="@string/grayscale"
+        app:layout_constraintBottom_toTopOf="@+id/sldSigma"
+        app:layout_constraintEnd_toStartOf="@+id/btnAutumn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnFlipHorizontal"
+        app:layout_constraintTop_toBottomOf="@+id/mutableImage" />
+
 
     <ImageView
         android:id="@+id/mutableImage"
         android:layout_width="411dp"
         android:layout_height="208dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/btnColorMap1"
+        android:contentDescription="@string/mutableImageDescription"
+        app:layout_constraintBottom_toTopOf="@+id/btnGrayscale"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tree" />
-
-    <Button
-        android:id="@+id/btnColorMap1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="btnGrayscale"
-        android:text="Gray Scale "
-        app:layout_constraintBottom_toTopOf="@+id/sldSigma"
-        app:layout_constraintEnd_toStartOf="@+id/btnColorMap2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnFlip3"
-        app:layout_constraintTop_toBottomOf="@+id/mutableImage" />
 
     <SeekBar
         android:id="@+id/sldSigma"
@@ -69,6 +70,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnColorMap1" />
+        app:layout_constraintTop_toBottomOf="@+id/btnGrayscale" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

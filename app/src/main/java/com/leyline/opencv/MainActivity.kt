@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         binding.sldSigma.setOnSeekBarChangeListener(this)
 
-        srcBitmap = BitmapFactory.decodeResource(this.resources, R.drawable.lady)
+        srcBitmap = BitmapFactory.decodeResource(this.resources, R.drawable.tree)
         dstBitMap = srcBitmap!!.copy(srcBitmap!!.config, true)
 
         updateImageView()
@@ -68,6 +68,7 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
     override fun onStopTrackingTouch(seekBar: SeekBar?) {}
 
     //    NDK
+    external fun superGray()
     external fun myFlip(bitmapIn: Bitmap, bitmapOut: Bitmap)
     external fun myColorMap(bitmapIn: Bitmap, bitmapOut: Bitmap)
     external fun myBlur(bitmapIn: Bitmap, bitmapOut: Bitmap, sigma: Float)
