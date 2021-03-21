@@ -10,10 +10,11 @@ void myBlur(Mat src, float sigma) {
     GaussianBlur(src, src, Size(), sigma);
 }
 
-void myGrayScale(Mat src) {
-    cvtColor(src, src, COLOR_BGR2GRAY);
-}
+void myErode(Mat src) {
+    int morph_size = 2;
+    Mat element = getStructuringElement(MORPH_RECT,
+                                        Size(2 * morph_size + 1, 2 * morph_size + 1),
+                                        Point(morph_size, morph_size));
 
-void myAutumnColorMap(Mat src) {
-    applyColorMap(src, src, COLORMAP_AUTUMN);
+    erode(src, src, element, Point(-1, -1), 1);
 }

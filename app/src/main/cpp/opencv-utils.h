@@ -8,6 +8,6 @@ void myFlip(Mat src);
 
 void myBlur(Mat src, float sigma);
 
-void myGrayScale(Mat src);
+void myErode(Mat src);
 
-void myAutumnColorMap(Mat src);
+void myDilation(Mat src);

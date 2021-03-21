@@ -106,29 +106,18 @@ Java_com_leyline_opencv_MainActivity_myBlur(JNIEnv *env, jobject, jobject bitMap
     matToBitMap(env, src, bitMapOut, false);
 }
 
-extern "C" JNIEXPORT void JNICALL
-Java_com_leyline_opencv_MainActivity_myGrayscale(JNIEnv *env, jobject, jobject bitmapIn,
-                                                 jobject bitmapOut) {
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_leyline_opencv_MainActivity_myErode(JNIEnv *env, jobject, jobject bitmap_in,
+                                             jobject bitmap_out) {
     Mat src;
-    bitMapToMat(env, bitmapIn, src, false);
-    myGrayScale(src);
-    matToBitMap(env, src, bitmapOut, false);
-}
-
-extern "C" JNIEXPORT void JNICALL
-Java_com_leyline_opencv_MainActivity_myColorMap(JNIEnv *env, jobject, jobject bitmapIn,
-                                                jobject bitmapOut) {
-    Mat gray;
-    bitMapToMat(env, bitmapIn, gray, false);
-    myGrayScale(gray);
-    matToBitMap(env, gray, bitmapOut, false);
-}
-
-extern "C" JNIEXPORT void JNICALL
-Java_com_leyline_opencv_MainActivity_superGray(JNIEnv *env, jobject, jobject bitmapIn,
-                                                jobject bitmapOut) {
-    Mat gray;
-    bitMapToMat(env, bitmapIn, gray, false);
-    myGrayScale(gray);
-    matToBitMap(env, gray, bitmapOut, false);
+    bitMapToMat(env, bitmap_in, src, false);
+    myErode(src);
+    matToBitMap(env, src, bitmap_out, false);
+}extern "C"
+JNIEXPORT void JNICALL
+Java_com_leyline_opencv_MainActivity_myDilation(JNIEnv *env, jobject thiz, jobject bitmap_in,
+                                                jobject bitmap_out) {
+    // TODO: implement myDilation()
 }

@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginEnd="25dp"
-        android:onClick="btnFlipClick"
+        android:onClick="btnFlipHorizontal"
         android:text="@string/flip"
         app:layout_constraintBottom_toTopOf="@+id/sldSigma"
         app:layout_constraintEnd_toStartOf="@+id/btnGrayscale"
@@ -21,12 +21,13 @@
         app:layout_constraintTop_toBottomOf="@+id/mutableImage" />
 
     <Button
+        android:visibility="gone"
         android:id="@+id/btnAutumn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="38dp"
         android:layout_marginEnd="36dp"
-        android:onClick="btnColorMap"
+        android:onClick="btnAutumn"
         android:text="@string/autumn"
         app:layout_constraintBottom_toTopOf="@+id/sldSigma"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="btnGrayscale"
-        android:text="@string/grayscale"
+        android:text="@string/erode"
         app:layout_constraintBottom_toTopOf="@+id/sldSigma"
         app:layout_constraintEnd_toStartOf="@+id/btnAutumn"
         app:layout_constraintHorizontal_bias="0.5"
