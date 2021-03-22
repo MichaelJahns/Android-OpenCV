@@ -124,4 +124,12 @@ Java_com_leyline_opencv_MainActivity_myDilate(JNIEnv *env, jobject, jobject bitm
     bitMapToMat(env, bitmapIn, dilate, false);
     myDilate(dilate);
     matToBitMap(env, dilate, bitmapOut, false);
+}extern "C"
+JNIEXPORT void JNICALL
+Java_com_leyline_opencv_MainActivity_myCanny(JNIEnv *env, jobject, jobject bitmapIn,
+                                             jobject bitmapOut) {
+    Mat canny;
+    bitMapToMat(env, bitmapIn, canny, false);
+    canny = myCanny(canny);
+    matToBitMap(env, canny, bitmapOut, false);
 }

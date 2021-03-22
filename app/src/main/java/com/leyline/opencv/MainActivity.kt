@@ -43,7 +43,11 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         updateImageView()
     }
 
-    //  FLIP
+    fun btnCanny(view: View) {
+        this.myCanny(srcBitmap!!, dstBitMap!!)
+        updateImageView()
+    }
+
     fun btnFlipHorizontal(view: View) {
         Log.i("Flip", "Attempted Flip")
         this.myFlip(srcBitmap!!, dstBitMap!!)
@@ -55,7 +59,7 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
     external fun myBlur(bitmapIn: Bitmap, bitmapOut: Bitmap, sigma: Float)
     external fun myErode(bitmapIn: Bitmap, bitmapOut: Bitmap)
     external fun myDilate(bitmapIn: Bitmap, bitmapOut: Bitmap)
-
+    external fun myCanny(bitmapIn: Bitmap, bitmapOut: Bitmap)
 
     //   BLUR
     fun doBlur() {

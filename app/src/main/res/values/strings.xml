@@ -4,6 +4,7 @@
     <string name="flip"> FLIP </string>
     <string name="erode"> ERODE </string>
     <string name="dilate"> DILATE </string>
+    <string name="canny"> CANNY </string>
     <string name="grayscale"> GRAYSCALE </string>
     <string name="autumn"> AUTUMN </string>
     <string name="deconstruct"> DECONSTRUCT </string>

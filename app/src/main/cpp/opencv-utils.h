@@ -11,3 +11,5 @@ void myBlur(Mat src, float sigma);
 void myErode(Mat src);
 
 void myDilate(Mat src);
+
+Mat myCanny(Mat src);

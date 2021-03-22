@@ -10,53 +10,57 @@
         android:id="@+id/btnFlipHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="25dp"
         android:onClick="btnFlipHorizontal"
         android:text="@string/flip"
-        app:layout_constraintBottom_toTopOf="@+id/sldSigma"
-        app:layout_constraintEnd_toStartOf="@+id/btnGrayscale"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnErode"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mutableImage" />
+        app:layout_constraintTop_toBottomOf="@+id/sldSigma" />
 
     <Button
         android:id="@+id/btnDilate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginEnd="36dp"
         android:onClick="btnDilate"
         android:text="@string/dilate"
-        app:layout_constraintBottom_toTopOf="@+id/sldSigma"
+        app:layout_constraintBottom_toBottomOf="@+id/btnCanny"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnGrayscale"
-        app:layout_constraintTop_toBottomOf="@+id/mutableImage"
-        app:layout_constraintVertical_bias="0.502" />
+        app:layout_constraintStart_toEndOf="@+id/btnCanny"
+        app:layout_constraintTop_toTopOf="@+id/btnCanny" />
 
     <Button
-        android:id="@+id/btnGrayscale"
+        android:id="@+id/btnErode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="btnErode"
         android:text="@string/erode"
-        app:layout_constraintBottom_toTopOf="@+id/sldSigma"
-        app:layout_constraintEnd_toStartOf="@+id/btnDilate"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintBottom_toBottomOf="@+id/btnFlipHorizontal"
+        app:layout_constraintEnd_toStartOf="@+id/btnCanny"
         app:layout_constraintStart_toEndOf="@+id/btnFlipHorizontal"
-        app:layout_constraintTop_toBottomOf="@+id/mutableImage" />
+        app:layout_constraintTop_toTopOf="@+id/btnFlipHorizontal" />
 
+    <Button
+        android:id="@+id/btnCanny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btnCanny"
+        android:text="@string/canny"
+        app:layout_constraintBottom_toBottomOf="@+id/btnErode"
+        app:layout_constraintEnd_toStartOf="@+id/btnDilate"
+        app:layout_constraintStart_toEndOf="@+id/btnErode"
+        app:layout_constraintTop_toTopOf="@+id/btnErode" />
 
     <ImageView
         android:id="@+id/mutableImage"
         android:layout_width="411dp"
         android:layout_height="208dp"
+        android:layout_marginTop="132dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/mutableImageDescription"
-        app:layout_constraintBottom_toTopOf="@+id/btnGrayscale"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tree" />
@@ -66,10 +70,8 @@
         android:layout_width="379dp"
         android:layout_height="wrap_content"
         android:max="100"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGrayscale" />
+        app:layout_constraintTop_toBottomOf="@+id/mutableImage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

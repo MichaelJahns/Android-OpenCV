@@ -25,3 +25,9 @@ void myDilate(Mat src) {
                                        Point(morph_size, morph_size));
     dilate(src, src, kernel);
 }
+
+Mat myCanny(Mat src) {
+    Mat canny;
+    Canny(src, canny, 5, 50);
+    return canny;
+}
