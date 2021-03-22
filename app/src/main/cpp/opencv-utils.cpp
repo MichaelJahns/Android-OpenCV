@@ -12,9 +12,16 @@ void myBlur(Mat src, float sigma) {
 
 void myErode(Mat src) {
     int morph_size = 2;
-    Mat element = getStructuringElement(MORPH_RECT,
-                                        Size(2 * morph_size + 1, 2 * morph_size + 1),
-                                        Point(morph_size, morph_size));
+    Mat kernel = getStructuringElement(MORPH_RECT,
+                                       Size(2 * morph_size + 1, 2 * morph_size + 1),
+                                       Point(morph_size, morph_size));
+    erode(src, src, kernel);
+}
 
-    erode(src, src, element, Point(-1, -1), 1);
+void myDilate(Mat src) {
+    int morph_size = 2;
+    Mat kernel = getStructuringElement(MORPH_RECT,
+                                       Size(2 * morph_size + 1, 2 * morph_size + 1),
+                                       Point(morph_size, morph_size));
+    dilate(src, src, kernel);
 }

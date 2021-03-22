@@ -109,15 +109,19 @@ Java_com_leyline_opencv_MainActivity_myBlur(JNIEnv *env, jobject, jobject bitMap
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_leyline_opencv_MainActivity_myErode(JNIEnv *env, jobject, jobject bitmap_in,
-                                             jobject bitmap_out) {
-    Mat src;
-    bitMapToMat(env, bitmap_in, src, false);
-    myErode(src);
-    matToBitMap(env, src, bitmap_out, false);
-}extern "C"
+Java_com_leyline_opencv_MainActivity_myErode(JNIEnv *env, jobject, jobject bitmapIn,
+                                             jobject bitmapOut) {
+    Mat erode;
+    bitMapToMat(env, bitmapIn, erode, false);
+    myErode(erode);
+    matToBitMap(env, erode, bitmapOut, false);
+}
+extern "C"
 JNIEXPORT void JNICALL
-Java_com_leyline_opencv_MainActivity_myDilation(JNIEnv *env, jobject thiz, jobject bitmap_in,
-                                                jobject bitmap_out) {
-    // TODO: implement myDilation()
+Java_com_leyline_opencv_MainActivity_myDilate(JNIEnv *env, jobject, jobject bitmapIn,
+                                              jobject bitmapOut) {
+    Mat dilate;
+    bitMapToMat(env, bitmapIn, dilate, false);
+    myDilate(dilate);
+    matToBitMap(env, dilate, bitmapOut, false);
 }

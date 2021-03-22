@@ -10,4 +10,4 @@ void myBlur(Mat src, float sigma);
 
 void myErode(Mat src);
 
-void myDilation(Mat src);
+void myDilate(Mat src);

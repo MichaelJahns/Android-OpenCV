@@ -33,14 +33,13 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         binding.mutableImage.setImageBitmap(this.dstBitMap)
     }
 
-    fun btnGrayscale(view: View) {
-        Log.i("GRAYSCALE", "Attempted grayscale")
+    fun btnErode(view: View) {
         this.myErode(srcBitmap!!, dstBitMap!!)
         updateImageView()
     }
 
-    fun btnAutumn(view: View) {
-        Log.i("AUTUMN", "Attempted ColorMap")
+    fun btnDilate(view: View) {
+        this.myDilate(srcBitmap!!, dstBitMap!!)
         updateImageView()
     }
 
@@ -55,7 +54,7 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
     external fun myFlip(bitmapIn: Bitmap, bitmapOut: Bitmap)
     external fun myBlur(bitmapIn: Bitmap, bitmapOut: Bitmap, sigma: Float)
     external fun myErode(bitmapIn: Bitmap, bitmapOut: Bitmap)
-    external fun myDilation(bitmapIn: Bitmap, bitmapOut: Bitmap)
+    external fun myDilate(bitmapIn: Bitmap, bitmapOut: Bitmap)
 
 
     //   BLUR
